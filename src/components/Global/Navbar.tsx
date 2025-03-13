@@ -95,7 +95,6 @@ const Navbar: React.FC = () => {
           <a href="#" className="hover:text-[#A86A28]">
             DEMO REQUEST
           </a> {/* Option Demo Request */}
-          </a>
           <button
             onClick={() => navigate("")}
             className="px-3 py-2 border-2 rounded-lg hover:text-[#A86A28] transition duration-300"
