@@ -94,6 +94,7 @@ const Navbar: React.FC = () => {
           </a>
           <a href="#" className="hover:text-[#A86A28]">
             DEMO REQUEST
+          </a> {/* Option Demo Request */}
           </a>
           <button
             onClick={() => navigate("")}
