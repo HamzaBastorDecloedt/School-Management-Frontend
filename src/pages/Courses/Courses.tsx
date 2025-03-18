@@ -1,13 +1,14 @@
 import React from "react";
 import DiscoverOurCourses from "../../components/Courses/DiscoverOurCourses";
-import DiscoverOurCoursesBanner from "../../components/Global/DiscoverOurCoursesBanner";
-import BottomBanner from "../../components/Courses/BottomBanner";
+
+import BottomBanner from "../../components/Global/BottomBanner";
+import TopBanner from "../../components/Global/TopBanner";
 
 const Courses: React.FC = () => {
     return (
         <>
         <title>Wayo Academy | Courses</title>
-        <DiscoverOurCoursesBanner />
+        <TopBanner>DISCOVER OUR COURSES</TopBanner>
         <DiscoverOurCourses />
         <BottomBanner />
         </>
