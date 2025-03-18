@@ -64,14 +64,14 @@ const ContactSection: React.FC = () => {
                       className="w-full h-48 shadow-sm resize-none text-white placeholder-text-400 text-lg font-normal leading-7 rounded-2xl border border-gray-200 focus:outline-none px-4 py-4"
                       placeholder="Comments or questions"
                     ></textarea>
-                    <button className="w-full h-12 text-center text-white text-base font-semibold leading-6 rounded-full bg-[#A86A28] shadow transition-all duration-700 hover:bg-[#A86A28]/80 cursor-pointer">
+                    <button className="w-full h-12 text-center text-white text-base font-semibold leading-6 rounded-full bg-[#d2822d]/[0.8] shadow transition-all duration-700 hover:bg-[#d2822d]/66 cursor-pointer">
                       Send
                     </button>
                   </form>
                 </div>
               </div>
               <div className=" flex items-center justify-center relative ">
-                <div className="absolute inset-0 bg-[url('https://pagedone.io/asset/uploads/1696245837.png')] bg-cover bg-no-repeat filter hue-rotate-[160deg] brightness-130 saturate-120 hidden lg:block"></div>
+                <div className="absolute inset-0 bg-[url('https://pagedone.io/asset/uploads/1696245837.png')] bg-cover bg-no-repeat filter hue-rotate-[160deg] brightness-140 saturate-160 hidden lg:block"></div>
                 <div className="w-full max-w-md relative z-10">
                   <div className="bg-[#dcdcdc] shadow-xl rounded-4xl p-4 sm:p-6">
                     <a
