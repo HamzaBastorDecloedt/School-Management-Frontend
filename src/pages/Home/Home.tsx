@@ -10,14 +10,11 @@ import FAQ from "../../components/Home/FAQ";
 import UpcomingEvent from "../../components/Home/UpcomingEvent";
 import Pricing from "../../components/Home/Pricing";
 import MasteringScrum from "../../components/Home/Carousel";
-import { Helmet } from "react-helmet-async";
 
 const Home: React.FC = () => {
     return (
         <>
-        <Helmet>
-                <title>Wayo Academy | Home</title>
-        </Helmet>
+            <title>Wayo Academy | Home</title>
         <MainSection />
         <GetToKnowUs />
         <WhyChooseWayo />
