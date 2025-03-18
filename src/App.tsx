@@ -30,7 +30,6 @@ const TitleManager = () => {
 };
 
 function App() {
-  console.log("Rendu de App");
   return (
     <Router>
       <TitleManager />
