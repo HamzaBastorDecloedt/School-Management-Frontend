@@ -31,8 +31,10 @@ const mentors = [
     title: "Cybersecurity Expert",
   },
 ];
-
-const MeetYourMentors: React.FC = () => {
+interface MeetYourMentorsProps {
+  id?: string;
+}
+const MeetYourMentors: React.FC<MeetYourMentorsProps> = ({ id }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef<Slider | null>(null);
 
@@ -55,7 +57,7 @@ const MeetYourMentors: React.FC = () => {
   };
 
   return (
-    <div className="bg-black text-white py-10">
+    <div id={id} className="bg-black text-white py-10">
       <h2 className="text-center text-3xl font-serif mb-6">
         Meet your mentors
       </h2>

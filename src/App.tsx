@@ -11,6 +11,10 @@ import MainLayout from "./layouts/MainLayout";
 import Courses from "./pages/Courses/Courses";
 import ContactUs from "./pages/ContactUs/ContactUs";
 import CourseDetails from "./pages/CourseDetails/CourseDetails";
+import SchoolAdmission from "./pages/SchoolAdmission/SchoolAdmission";
+import LearnerAdmission from "./pages/LearnerAdmission/LearnerAdmission";
+import ScrollToTop from "./utils/ScrollToTop";
+import { LoginProvider } from "./context/LoginContext"; // Import du contexte
 
 const titles: { [key: string]: string } = {
   "/": "Wayo Academy | Home",
@@ -18,6 +22,8 @@ const titles: { [key: string]: string } = {
   "/courses": "Wayo Academy | Courses",
   "/coursedetails": "Wayo Academy | Course details",
   "/contactus": "Wayo Academy | Contact Us",
+  "/schooladmission": "Wayo Academy | School Admission",
+  "/learneradmission": "Wayo Academy | Learner Admission",
 };
 
 const TitleManager = () => {
@@ -32,16 +38,21 @@ const TitleManager = () => {
 function App() {
   return (
     <Router>
-      <TitleManager />
-      <Routes>
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/coursedetails" element={<CourseDetails />} />
-          <Route path="/contactus" element={<ContactUs />} />
-        </Route>
-      </Routes>
+      <LoginProvider>
+        <TitleManager />
+        <ScrollToTop />
+        <Routes>
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/coursedetails" element={<CourseDetails />} />
+            <Route path="/contactus" element={<ContactUs />} />
+            <Route path="/schooladmission" element={<SchoolAdmission />} />
+            <Route path="/learneradmission" element={<LearnerAdmission />} />
+          </Route>
+        </Routes>
+      </LoginProvider>
     </Router>
   );
 }
