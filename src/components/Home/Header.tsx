@@ -15,13 +15,13 @@ const Header: React.FC = () => {
         </p>
         <div className="mt-5 sm:mt-6 md:mt-10 flex sm:flex-row gap-3 sm:gap-5 justify-center">
           <button
-            onClick={() => navigate("")}
+            onClick={() => navigate("/schooladmission")}
             className="bg-[#d2822d]/[0.7] hover:bg-[#d2822d]/55 text-white border-3 border-[#A9A9A8] px-5 sm:px-4 2xl:px-15 2xl:p-2 md:px-4 py-2 rounded-xl shadow-md transition duration-300 text-md 2xl:text-xl xl:text-md sm:text-lg w-auto max-w-fit whitespace-nowrap cursor-pointer"
           >
             School Admission
           </button>
           <button
-            onClick={() => navigate("")}
+            onClick={() => navigate("/learneradmission")}
             className="bg-[#d2822d]/[0.7] hover:bg-[#d2822d]/55 text-white border-3 border-[#A9A9A8] px-5 sm:px-4 2xl:px-15 2xl:p-2 md:px-4 py-2 rounded-xl shadow-md transition duration-300 text-md 2xl:text-xl xl:text-md sm:text-lg w-auto max-w-fit cursor-pointer whitespace-nowrap"
           >
             Learner Admission
@@ -29,7 +29,7 @@ const Header: React.FC = () => {
         </div>
         <div className="mt-4 sm:mt-6 flex justify-center">
           <button
-            onClick={() => navigate("")}
+            onClick={() => navigate("/courses")}
             className="bg-[#d2822d]/[0.7] hover:bg-[#d2822d]/55 text-white border-3 border-[#A9A9A8] 2xl:mt-4 px-25 2xl:px-52 xl:px-25 lg:px-25 md:px-25 sm:px-25 2xl:p-2 py-2 rounded-xl shadow-md transition duration-300 text-md xl:text-md sm:text-xl w-auto max-w-fit cursor-pointer whitespace-nowrap"
           >
             Discover our courses

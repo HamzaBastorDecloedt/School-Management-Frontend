@@ -1,32 +1,30 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { FaLock } from "react-icons/fa";
+import { useLogin } from "../../context/LoginContext"; // Import du hook
 
 const slides2 = [
   {
     image: "src/assets/images/CourseDetails/Image_04.jpg",
-    text : "Scrum Master \n Master the foundations of Scrum and Agile project management with our comprehensive training program. This course is designed to provide you with essential knowledge and practical skills to implement Scrum effectively within your organization.",
-    learners : "20",
-    price : "2",
+    text: "Scrum Master \n Master the foundations of Scrum and Agile project management with our comprehensive training program. This course is designed to provide you with essential knowledge and practical skills to implement Scrum effectively within your organization.",
+    learners: "20",
+    price: "2",
     buttonText: "Join Course A",
   },
   {
     image: "src/assets/images/CourseDetails/Image_05.jpg",
-    text : "Les personnes de type pensée",
-    learners : "30",
-    price : "1",
+    text: "Les personnes de type pensée",
+    learners: "30",
+    price: "1",
     buttonText: "Join Course B",
   },
 ];
 
-
 const CourseDetailsSection: React.FC = () => {
+  const { toggleLoginPopup } = useLogin(); // Utilisation du contexte
   const [index2, setIndex2] = useState(0);
-
   const [startX2, setStartX2] = useState<number | null>(null);
-
   const [isGrabbing2, setIsGrabbing2] = useState(false);
-
   const [direction2, setDirection2] = useState(1);
 
   useEffect(() => {
@@ -167,98 +165,90 @@ const CourseDetailsSection: React.FC = () => {
                 />
               </div>
               <div className="mt-6">
-                <button className="w-full bg-[#A86A28] font-bold shadow transition-all duration-700 hover:bg-[#A86A28]/80 py-2 rounded-b-xl cursor-pointer">
+                <button
+                  onClick={toggleLoginPopup} // Utilisation de toggleLoginPopup
+                  className="w-full bg-[#A86A28] font-bold shadow transition-all duration-700 hover:bg-[#A86A28]/80 py-2 rounded-b-xl cursor-pointer"
+                >
                   LOGIN
                 </button>
               </div>
             </div>
           </div>
         </div>
-        <div className="relative w-[320px] h-[609px] max-w-full"> {/* Taille fixe pour la boîte */}
-  <div className="bg-[#464646] rounded-xl shadow-xl flex flex-col h-full w-full">
-    <div className="relative w-full h-full mx-auto flex flex-col">
-      {/* Section Image */}
-      <div className="relative w-full h-[60%] overflow-hidden select-none rounded-t-2xl">
-        <div
-          className={`relative w-full h-full flex items-center justify-center transition-transform duration-500 ease-in-out ${
-            isGrabbing2 ? "cursor-grabbing" : "cursor-grab"
-          }`}
-          onMouseDown={handleMouseDown2}
-          onMouseUp={handleMouseUp2}
-          onTouchStart={handleTouchStart2}
-          onTouchMove={handleTouchMove2}
-          onTouchEnd={handleTouchEnd2}
-        >
-          <AnimatePresence>
-            <motion.img
-              key={slides2[index2].image}
-              src={slides2[index2].image}
-              alt="Course Slide"
-              className="absolute w-full h-full  rounded-t-2xl"
-              initial={{ opacity: 0, x: 100 * direction2 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 * direction2 }}
-              transition={{ duration: 0.5 }}
-            />
-            <motion.div
+        <div className="relative w-[320px] h-[609px] max-w-full">
+          <div className="bg-[#464646] rounded-xl shadow-xl flex flex-col h-full w-full">
+            <div className="relative w-full h-full mx-auto flex flex-col">
+              <div className="relative w-full h-[60%] overflow-hidden select-none rounded-t-2xl">
+                <div
+                  className={`relative w-full h-full flex items-center justify-center transition-transform duration-500 ease-in-out ${
+                    isGrabbing2 ? "cursor-grabbing" : "cursor-grab"
+                  }`}
+                  onMouseDown={handleMouseDown2}
+                  onMouseUp={handleMouseUp2}
+                  onTouchStart={handleTouchStart2}
+                  onTouchMove={handleTouchMove2}
+                  onTouchEnd={handleTouchEnd2}
+                >
+                  <AnimatePresence>
+                    <motion.img
+                      key={slides2[index2].image}
+                      src={slides2[index2].image}
+                      alt="Course Slide"
+                      className="absolute w-full h-full rounded-t-2xl"
+                      initial={{ opacity: 0, x: 100 * direction2 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -100 * direction2 }}
+                      transition={{ duration: 0.5 }}
+                    />
+                    <motion.div
                       className="absolute inset-0"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 0 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 1 }}
                     ></motion.div>
-          </AnimatePresence>
-        </div>
-      </div>
-
-      {/* Section Texte avec défilement */}
-      <motion.div
-        key={slides2[index2].text}
-        className=" text-left p-3 h-[30%] overflow-y-auto"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.5 }}
-      >
-        {slides2[index2].text.split("\n").map((line, i) => (
-          <React.Fragment key={i}>
-            {index2 === 0 && i === 0 ? (
-              <span className="text-center text-lg block font-bold">
-                {line}
-              </span>
-            ) : (
-              line
-            )}
-            <br />
-          </React.Fragment>
-        ))}
-      </motion.div>
-
-      <div className="flex justify-center items-center gap-6 text-white mt-3 border-y border-[#6E6E6E] w-73 mx-auto py-2">
-      <div className="flex flex-col items-center  border-r border-[#6E6E6E] pr-5">
+                  </AnimatePresence>
+                </div>
+              </div>
+              <motion.div
+                key={slides2[index2].text}
+                className="text-left p-3 h-[30%] overflow-y-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+              >
+                {slides2[index2].text.split("\n").map((line, i) => (
+                  <React.Fragment key={i}>
+                    {index2 === 0 && i === 0 ? (
+                      <span className="text-center text-lg block font-bold">
+                        {line}
+                      </span>
+                    ) : (
+                      line
+                    )}
+                    <br />
+                  </React.Fragment>
+                ))}
+              </motion.div>
+              <div className="flex justify-center items-center gap-6 text-white mt-3 border-y border-[#6E6E6E] w-73 mx-auto py-2">
+                <div className="flex flex-col items-center border-r border-[#6E6E6E] pr-5">
                   <span className="text-md font-bold">{slides2[index2].learners}</span>
-                  <span className="text-xs text-[#C9C9C9] font-bold">
-                    LEARNERS
-                  </span>
+                  <span className="text-xs text-[#C9C9C9] font-bold">LEARNERS</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <span className="text-md font-bold">{slides2[index2].price}$</span>
-                  <span className="text-xs text-[#C9C9C9] font-bold">
-                    PRICE
-                  </span>
+                  <span className="text-xs text-[#C9C9C9] font-bold">PRICE</span>
                 </div>
-               
               </div>
-
-      {/* Bouton */}
-      <div className="mt-5">
-        <button className="w-full h-full bg-[#A86A28] font-bold shadow transition-all duration-700 hover:bg-[#A86A28]/80 py-2 rounded-b-xl cursor-pointer">
-          {slides2[index2].buttonText}
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
+              <div className="mt-5">
+                <button className="w-full h-full bg-[#A86A28] font-bold shadow transition-all duration-700 hover:bg-[#A86A28]/80 py-2 rounded-b-xl cursor-pointer">
+                  {slides2[index2].buttonText}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

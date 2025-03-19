@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { FaChevronDown, FaSearch } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const DiscoverOurCourses: React.FC = () => {
+  const navigate = useNavigate();
+  
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
@@ -100,7 +103,7 @@ const DiscoverOurCourses: React.FC = () => {
           </div>
         </div>
       </form>
-      <a href="/coursedetails">
+      <button onClick={() => navigate("/coursedetails")}>
         <div className="relative w-80 h-[380px] mt-20 max-w-xs sm:max-w-sm md:max-w-md bg-white shadow-lg rounded-xl overflow-hidden group">
           <div
             className="absolute inset-0 bg-cover bg-center transition-transform duration-500"
@@ -128,7 +131,7 @@ const DiscoverOurCourses: React.FC = () => {
             </p>
           </div>
         </div>
-      </a>
+      </button>
       <div className="flex justify-center mt-15">
         <nav className="bg-gray-200 rounded-full px-4 py-2">
           <ul className="flex text-gray-600 gap-4 font-medium py-2">
