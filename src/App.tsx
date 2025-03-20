@@ -11,10 +11,12 @@ import MainLayout from "./layouts/MainLayout";
 import Courses from "./pages/Courses/Courses";
 import ContactUs from "./pages/ContactUs/ContactUs";
 import CourseDetails from "./pages/CourseDetails/CourseDetails";
+import ScrollToTop from "./utils/ScrollToTop";
+import { LoginProvider } from "./context/LoginContext";
 import SchoolAdmission from "./pages/SchoolAdmission/SchoolAdmission";
 import LearnerAdmission from "./pages/LearnerAdmission/LearnerAdmission";
-import ScrollToTop from "./utils/ScrollToTop";
-import { LoginProvider } from "./context/LoginContext"; // Import du contexte
+import TermsAndConditions from "./pages/TermsAndConditions/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 
 const titles: { [key: string]: string } = {
   "/": "Wayo Academy | Home",
@@ -24,6 +26,8 @@ const titles: { [key: string]: string } = {
   "/contactus": "Wayo Academy | Contact Us",
   "/schooladmission": "Wayo Academy | School Admission",
   "/learneradmission": "Wayo Academy | Learner Admission",
+  "/terms_conditions": "Wayo Academy | Terms and Conditions",
+  "/privacy_policy": "Wayo Academy | Privacy policy",
 };
 
 const TitleManager = () => {
@@ -50,6 +54,8 @@ function App() {
             <Route path="/contactus" element={<ContactUs />} />
             <Route path="/schooladmission" element={<SchoolAdmission />} />
             <Route path="/learneradmission" element={<LearnerAdmission />} />
+            <Route path="/terms_conditions" element={<TermsAndConditions />} />
+            <Route path="/privacy_policy" element={<PrivacyPolicy />} />
           </Route>
         </Routes>
       </LoginProvider>
