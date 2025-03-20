@@ -9,9 +9,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-black text-white py-4">
       <div className="container mx-auto px-6 md:px-12">
-        {/* Section principale du footer */}
         <div className="grid grid-cols-1 md:grid-cols-3 text-center md:text-left gap-8">
-          {/* Contact us */}
           <div className="text-center">
             <h3 className="font-semibold uppercase mb-3 text-md">Contact us</h3>
             <hr className="w-50 border-t-2 border-white mx-auto mb-3" />
@@ -33,8 +31,6 @@ const Footer: React.FC = () => {
               R320 Um Hurair 2 Dubai UAE
             </Link>
           </div>
-
-          {/* About us */}
           <div className="text-center">
             <h3 className="font-semibold uppercase mb-3 text-md">About us</h3>
             <hr className="w-30 border-t-2 border-white mx-auto mb-3" />
@@ -51,39 +47,34 @@ const Footer: React.FC = () => {
               Mentors
             </div>
           </div>
-
-          {/* Resources */}
           <div className="text-center">
             <h3 className="font-semibold uppercase mb-3 text-md">Resources</h3>
             <hr className="w-50 border-t-2 border-white mx-auto mb-3" />
-            <a
-              href="#"
+           <Link
+              to="/terms_conditions" 
               className="text-gray-300 hover:text-gray-400 transition block"
             >
               Terms & Conditions
-            </a>
-            <a
-              href="#"
+            </Link>
+             <Link
+              to="/privacy_policy"
               className="text-gray-300 hover:text-gray-400 transition block"
             >
               Privacy Policy
-            </a>
+            </Link>
           </div>
         </div>
-
-        {/* Ligne de séparation */}
         <hr className="border-1 border-white my-8" />
-
-        {/* Logo en bas */}
         <div className="flex  ">
           <div className="justify-center md:justify-start">
-            <a href="#">
+          <Link
+              to="/">
               <img
                 src="src/assets/images/Navbar/logo.png"
                 alt="Logo"
                 className="h-15 w-auto"
               />
-            </a>
+            </Link>
           </div>
           <div className="text-center mx-auto">
             © All the rights reserved to Wayo Academy
