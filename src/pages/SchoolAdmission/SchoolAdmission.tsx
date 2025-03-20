@@ -3,7 +3,7 @@ import TopBanner from "../../components/Global/TopBanner";
 import BottomBanner from "../../components/Global/BottomBanner";
 import SchoolAdmissionSection from "../../components/SchoolAdmission/SchoolAdmissionSection";
 
-const CourseDetails: React.FC = () => {
+const SchoolAdmission: React.FC = () => {
   return (
     <>
         <title>Wayo Academy | School Admission</title>
@@ -14,4 +14,4 @@ const CourseDetails: React.FC = () => {
   );
 };
 
-export default CourseDetails;
+export default SchoolAdmission;
